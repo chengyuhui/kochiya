@@ -5,8 +5,8 @@
   },
   "videos":[
     {
-      "videoPath": "C:\\Users\\cheng\\mygo\\src\\github.com\\chengyuhui\\sanae\\test\\24.mp4",
-      "imagePath": "C:\\Users\\cheng\\mygo\\src\\github.com\\chengyuhui\\sanae\\test\\av2941976.png",
+      "videoPath": "C:\\Users\\cheng\\mygo\\src\\github.com\\chengyuhui\\sanae\\testInput\\24.mp4",
+      "imagePath": "C:\\Users\\cheng\\mygo\\src\\github.com\\chengyuhui\\sanae\\testInput\\av2941976.png",
       "startFrame": 0,
       "length": 600,
       "overlayLength": 600,

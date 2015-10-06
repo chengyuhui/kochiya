@@ -69,7 +69,14 @@ func main() {
 	conf := loadConfig(os.Args[1])
 	log.Println("配置文件已加载")
 
-	tmpl, err := template.New("template.avs").ParseFiles("template.avs")
+	folderPath, err := osext.ExecutableFolder()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("BIN=%s", folderPath)
+
+	tmpl, err := template.New("template.avs").ParseFiles(filepath.Join(folderPath, "template.avs"))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -97,20 +104,20 @@ func main() {
 	avsPath := filepath.Join(tmpdir, "encode.avs")
 	err = ioutil.WriteFile(avsPath, []byte(avs), 0777)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		return
 	}
 	log.Printf("AVS文件已写入 %s", avsPath)
 
-	folderPath, err := osext.ExecutableFolder()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Printf("BIN=%s", folderPath)
-
 	err = moveImages(&conf.Videos, tmpdir)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		return
 	}
-	encode(conf, avsPath, folderPath)
+
+	err = encode(conf, avsPath, folderPath)
+	if err != nil {
+		log.Println(err)
+		return
+	}
 }
