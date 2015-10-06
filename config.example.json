@@ -1,0 +1,17 @@
+{
+  "output": {
+    "path":"Z:\\out.mp4",
+    "height": 720
+  },
+  "videos":[
+    {
+      "videoPath": "C:\\Users\\cheng\\mygo\\src\\github.com\\chengyuhui\\sanae\\test\\24.mp4",
+      "imagePath": "C:\\Users\\cheng\\mygo\\src\\github.com\\chengyuhui\\sanae\\test\\av2941976.png",
+      "startFrame": 0,
+      "length": 600,
+      "overlayLength": 600,
+      "fadeInLength": 20,
+      "fadeOutLength": 20
+    }
+  ]
+}
