@@ -6,7 +6,6 @@ import (
 	"log"
 )
 
-// loadConfig loads JSON config from path.
 func loadConfig(path string) config {
 	dat, err := ioutil.ReadFile(path)
 
